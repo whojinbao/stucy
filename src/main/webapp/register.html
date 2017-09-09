@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+</head>
+<body>
+	<!-- header start -->
+	<div class="zxcf_top_wper">
+		<div class="zxcf_top px1000 clearfix">
+			<div class="zxcf_top_l fl">
+				<img src="images/zxcf_phone.png" alt="">
+				400-027-0101(工作时间9:00-17:30) <a href=""><img
+					src="images/zxcf_weixin.png" alt=""></a> <a href=""><img
+					src="images/zxcf_sina.png" alt=""></a> <a href=""><img
+					src="images/zxcf_qq.png" alt=""></a>
+			</div>
+			<div class="zxcf_top_r fr">
+				<a href="" class="curspan">立即登录</a> <span>|</span> <a href="">免费注册</a>
+				<span>|</span> <a href="">常见问题</a>
+			</div>
+		</div>
+	</div>
+	<!-- end top -->
+	<div class="zxcf_nav_wper">
+		<div class="zxcf_nav clearfix px1000">
+			<div class="zxcf_nav_l fl">
+				<img src="images/zxcf_logo.png" alt="">
+			</div>
+			<div class="zxcf_nav_r fr">
+				<a href="/stucy/login.html" onClick="javascript :history.back(-1);"><img
+					src="images/lg_pic01.png" border="0" title="返回上一页"></a> <span>
+					<a href="/stucy/login.html" onClick="javascript :history.back(-1);">返回首页</a>
+			</div>
+		</div>
+	</div>
+	<!-- end  -->
+	<div class="reg_con_wper">
+		<div class="reg_con px1000">
+			<div class="reg_box clearfix">
+				<div class="reg_box_l fl">
+					<img src="
+		   	   	  images/reg_pic01.png" alt="">
+				</div>
+				<div class="reg_box_r fl">
+					<h2 class="lg_sec_tit clearfix">
+						<span class="fl">注册</span>
+					</h2>
+					<form id="MyForm" method="post">
+						<fieldset>
+							<p class="mt20">
+								<input type="text" placeholder="请输入11位手机号"
+									class="lg_input01 lg_input"id="userId" name="userId">
+								 <p id="uid" class="errors ng-hide" style="display: none">对不起，请输入正确的用户名</p> 
+							</p>
+
+							<p class="mt20">
+								<input type="password" placeholder="必须为首字母加数字且长度不小于8位"
+									class="lg_input02 lg_input" id="userPassword"
+									name="userPassword">
+								<span id="pad" class="errors ng-hide" style="display: none">对不起，请输入正确的密码</span>
+							</p>
+							<p class="mt20">
+								<input type="password" placeholder="密码确认"
+									class="lg_input02 lg_input" id="cpwd">
+								<span id="pasd" class="errors ng-hide" style="display: none">对不起，输入的密码不一致</span>
+							</p>
+							<p class="pt10">
+								<a href="">使用条款</a>&nbsp;&nbsp;<a href="">隐私条款</a>
+							</p>
+							<p class="mt20">
+								<input class="lg_btn"type="button" id="reception"value="立即登录"/>
+							</p>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer start -->
+	<div class="zscf_aboutus_wper">
+		<div class="zscf_aboutus px1000 clearfix">
+			<div class="zscf_aboutus_l fl">
+				<ul class="zscf_aboutus_lul clearfix">
+					<li class="pt10"><a href=""><img src="images/app.png"
+							alt=""></a></li>
+					<li>
+						<p class="pb20">服务热线</p> <strong>400-027-0101</strong>
+					</li>
+					<li>
+						<p class="pb10 linkpic">
+							<a href=""><img src="images/ft_sina.png" alt=""></a> <a
+								href=""><img src="images/ft_weixin.png" alt=""></a> <a
+								href=""><img src="images/ft_erji.png" alt=""></a>
+						</p>
+						<p>
+							<a href="">kefu@zhongxincaifu.com</a>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<!-- end left -->
+			<div class="zscf_aboutus_r fl clearfix">
+				<a href="#" class="fl ft_ewm"><img src="images/ft_erweima.png"
+					alt=""></a>
+				<ul class="fl clearfix">
+					<li><a href="">联系我们</a></li>
+					<li><a href="">我要融资</a></li>
+					<li><a href="">帮助中心</a></li>
+					<li><a href="">友情链接</a></li>
+					<li><a href="">招贤纳士</a></li>
+					<li><a href="">收益计算器</a></li>
+				</ul>
+			</div>
+			<!-- end right -->
+
+		</div>
+	</div>
+
+	<div class="zscf_bottom_wper">
+		<div class="zscf_bottom px1000 clearfix">
+			<p class="fl">© 2014 zhongxincaifu &nbsp; &nbsp;&nbsp;
+				中兴财富金融信息服务股份有限公司 &nbsp;&nbsp;&nbsp; 鄂ICP备14017254号-1</p>
+			<p class="fr">
+				<a href=""><img src="images/360.png" alt=""></a> <a href=""><img
+					src="images/kexin.png" alt=""></a> <a href=""><img
+					src="images/norton.png" alt=""></a>
+			</p>
+		</div>
+	</div>
+	<!-- footer end -->
+	<script type="text/javascript">
+		
+		$("#userId").blur(function() {//数字11位的手机号
+			var str = $("#userId").val();
+			var re = /^1\d{10}$/;
+			if (re.test(str)) {
+				var data = {
+					userId : $("#userId").val()
+				}
+				$.ajax({
+					type : "post",
+					url : "/stycy/haha/qUserinfosnew.do",
+					contentType : "application/json;charset=utf-8",
+					dataType : "json",
+					data : JSON.stringify(data),
+					success : function(data1) {
+						if (data1 == "error") {
+							//alert("可以注册");
+							$("#uid").hide();
+						} else {
+							//alert("用户已存在");
+							$("#uid").css("color","red").show();
+						}
+						;
+					}
+				});
+			} else {
+
+			}
+		})
+		$("#userPassword").blur(function() {//必须为字母加数字且长度不小于8位
+			var str = $("#userPassword").val();
+			var reg1 = new RegExp(/^[A-Za-z][0-9A-Za-z]+$/);
+			var ren = reg1.test(str) && str.length > 8
+			if (ren) {
+				//alert("ok");
+				$("#pad").hide();
+			} else {
+				//alert("no");
+				$("#pad").css("color","red").show();
+			}
+
+			return ren;
+		})
+
+		$("#cpwd").blur(function() {//必须为字母加数字且长度不小于8位
+			var str = $("#cpwd").val();
+			var a = $('#userPassword').val();
+			if (a == str) {
+				//alert("密码一致");
+				$("#pasd").hide();
+			} else {
+				//alert("重新输入");
+				$("#pasd").css("color","red").show();
+				return false;
+			}
+
+		})
+
+		$("#reception").click(
+				function() {
+
+					if ((!$("#userId").val() == "")
+							&& (!$("#userPassword").val() == "")
+							&& (!$("#cpwd").val() == "")) {
+
+						$.ajax({
+							url : "/stucy/haha/addUserinfo.do",
+							type : "post",
+							data : $("#MyForm").serialize(),
+							success : function(data) {
+								window.location.href = 'login.html';
+							}
+						})
+					} else {
+						alert("账号和密码和密码确认不允许为空");
+					}
+				});
+	</script>
+</body>
+</html>

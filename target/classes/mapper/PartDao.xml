@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- 角色表的XML -->
+<mapper namespace="com.dao.who.PartDao">
+   	
+   	<!-- 查询所有的角色(分页查询) -->
+	<select id="queryPart" resultType="com.entity.Part" parameterType="com.entity.util.Page">
+		select * from (select rownum r,c.* from part c order by to_number(part_id) asc) u where r > #{startIndex} and r &lt; #{endIndex}
+	</select>
+	
+	<!-- 增加一个角色 -->
+	<insert id="addPart" parameterType="com.entity.Part">
+		insert into part
+		values(partseq.nextval,#{partName},'admin',#{partDescribe},'1')
+	</insert>
+	
+	<!-- 根据角色ID查询该角色下所有的权限 -->
+	<select id="queryDescribe" resultType="com.entity.Partjur">
+		select j.jur_id,j.jur_name from part
+		p,jurisdiction j, partjur pj where p.part_id=pj.part_id and
+		j.jur_id=pj.jur_id and p.part_id=#{partId}
+	</select>
+	
+	<!-- 根据角色ID删除所有的权限 -->
+	<delete id="deleteDescribe">
+		delete partjur where part_id=#{partId}
+	</delete>
+	
+	<!-- 插入要修改的权限 -->
+	<insert id="updateDescribe" parameterType="com.entity.Partjur">
+		insert into partjur values(#{partId},#{jurId})
+	</insert>
+	
+	<!-- 查询所有用户的角色 -->
+	<select id="queryConpart" resultType="java.util.Map">
+		select o.con_id,p.part_name,p.part_id from conpart c,part p, consumer o where c.consus_id=o.con_id and p.part_id=c.part_id order by con_id asc
+	</select>
+	
+	<!-- 查询所有的角色 -->
+	<select id="queryAllPart" resultType="java.util.Map">
+		select * from part
+	</select>
+	
+	<!-- 根据员工ID查询所拥有的角色 -->
+	<select id="queryselPart" resultType="java.util.Map">
+		select p.part_id,c.con_id from part p,consumer c,conpart t where c.con_id=t.consus_id and p.part_id=t.part_id and c.con_id=#{userId}
+	</select>
+	
+	<!-- 根据角色删除所有相关的用户角色表信息 -->
+	<delete id="deleteConPart">
+		delete conpart where consus_id=#{consusId}
+	</delete>
+	
+	<!-- 插入更新的用户角色表信息 -->
+	<insert id="insertConPart" parameterType="java.util.Map">
+		insert into conpart values(#{consusId},#{partId})
+	</insert>
+	
+	<!-- 启用禁用角色 -->
+	<update id="updatePartStatus" parameterType="java.util.Map">
+		update part set state=#{Status} where part_id=#{partId}
+	</update>
+	
+	<!-- 根据角色名称查询是否有相同的角色名 -->
+	<select id="queryAllPartName" resultType="java.util.Map" parameterType="String">
+		select * from part where part_name=#{param}
+	</select>
+	
+	<!-- 查询角色总数（分页使用） -->
+	<select id="queryCountPart" resultType="int">
+		select count(*) from part
+	</select>
+	
+	<!-- 修改角色描述 -->
+	<update id="updatePart" parameterType="com.entity.Part">
+		update part set part_describe=#{partDescribe} where part_id=#{partId}
+	</update>
+
+</mapper>

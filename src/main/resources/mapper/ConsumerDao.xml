@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- 用于查询员工表的XML -->
+<mapper namespace="com.dao.who.ConsumerDao">
+	
+	<!-- 查询或模糊查询所有的员工信息再分页返回 -->
+	 <select id="queryConsumer" resultType="java.util.Map" parameterType="com.entity.util.Page">
+			select * from (select rownum r,c.* from (select * from consumer order by to_number(con_id) desc) c
+				<if test="selVal!=null">
+	 				where c.con_id like '%${selVal}%' or c.con_id like '%${selVal}%' or c.con_user like '%${selVal}%' or c.con_name like '%${selVal}%'
+					or c.sex  like '%${selVal}%'or c.tel  like '%${selVal}%'or  c.home  like '%${selVal}%' or  c.ID_cardurl like '%${selVal}%'
+ 				</if>
+			) u where r > #{startIndex} and r &lt; #{endIndex}
+ 			
+	</select>
+	
+	<!-- 增加员工 -->
+	<insert id="addConsumer" parameterType="com.entity.Consumer" >
+			insert into consumer values(stuorder.nextval,#{conUser},#{conName},#{conPassword},#{sex},#{tel},#{home},#{idCardurl},'1')
+	</insert>
+	
+	<!-- 更新员工信息 -->
+	<update id="updateConsumerNew" parameterType="com.entity.Consumer" >
+			update  consumer set con_name=#{conName},con_password=#{conPassword},sex=#{sex},tel=#{tel},home=#{home},id_cardurl=#{idCardurl} where con_id=#{conId}
+	</update>
+	
+	<!-- 获取分页查询的总数 -->
+	<select id="getCount" resultType="int" parameterType="com.entity.util.Page">
+			select count(*) from consumer 
+			<if test="selVal!=null">
+ 			where con_id like '%${selVal}%' or con_id like '%${selVal}%'or con_user like '%${selVal}%' or con_name like '%${selVal}%'
+				or sex  like '%${selVal}%'or tel  like '%${selVal}%'or  home  like '%${selVal}%'or  ID_cardurl like '%${selVal}%'
+ 			</if>
+	</select>
+	
+	<!-- 更新员工角色 -->
+	<update id="updateConPart" parameterType="java.util.Map">
+		update consumer set con_status=#{conStatus} where con_id=#{conId}
+	</update>
+	
+	<!-- 根据员工ID查询该员工的角色 -->
+	<select id="queryConPartJuri" resultType="java.util.Map">
+		select j.jur_describe from part p,consumer c,jurisdiction j,conpart cp,partjur pj 
+		where c.con_id=cp.consus_id and cp.part_id=p.part_id and p.part_id=pj.part_id and pj.jur_id=j.jur_id 
+		and c.con_status='1' and p.state='1' and j.jur_status='1'
+		and c.con_user=#{userId}
+	</select>
+	
+	<!-- 账户名唯一性查询 -->
+	<select id="queryConOnly" resultType="java.util.Map">
+		select * from consumer where con_user=#{user}
+	</select>
+	
+	<!-- shrio专用账户密码匹配查询 -->
+	<select id="queryUser" resultType="com.entity.Consumer">
+		select * from consumer where con_user=#{userName}
+	</select>
+	 
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 用于查询权限表的XML -->
+<mapper namespace="com.dao.who.JurisdictionDao">
+	
+	<!-- 分页查询所有的权限 -->
+	 <select id="queryJuri" resultType="com.entity.Jurisdiction">
+			select * from (select rownum r,c.* from jurisdiction c) u where r > #{startIndex} and r &lt; #{endIndex} order by to_number(jur_id) asc
+	</select>
+	
+	<!-- 禁用一个权限 -->
+	<update id="disableJuri">
+			update jurisdiction set jur_status='0' where jur_id=#{jurId}
+	</update>
+	
+	<!-- 启用一个权限 -->
+	<update id="enableJuri">
+			update jurisdiction set jur_status='1' where jur_id=#{jurId}
+	</update>
+	
+	<!-- 分页查询的数据总数 -->
+	<select id="queryCountJur" resultType="int">
+			select count(*) from jurisdiction
+	</select>
+	 
+</mapper>
