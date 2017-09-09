@@ -17,8 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.entity.Itemarea;
 import com.entity.Iteminfo;
 import com.entity.Itemtype;
-import com.service.cq.ItemareaService;
-import com.service.cq.ItemtypeService;
 import com.service.zf.IteminfoService;
 import com.web.fileUpload;
 
@@ -27,10 +25,10 @@ import com.web.fileUpload;
 public class IteminfoController {
 	@Autowired
 	private IteminfoService iteminfoservice;
-	@Autowired
-	private ItemtypeService itemtypeservice;
-	@Autowired
-	private ItemareaService itemareaservice;
+	//@Autowired
+	//private ItemtypeService itemtypeservice;
+	//@Autowired
+	//private ItemareaService itemareaservice;
 	@RequestMapping("/itemlist")
 	@ResponseBody
 	public List<Iteminfo>  getlist(HttpSession session){	
@@ -57,12 +55,12 @@ public class IteminfoController {
 		iteminfoservice.addIteminfo(iteminfo);			
 		return "list";
 	}
-	@RequestMapping("/itemtype")
+	/*@RequestMapping("/itemtype")
 	public String goitemtype(Model model){			
 		List<Itemtype> itemtypelist = itemtypeservice.queryItemtype();
 		List<Itemarea> itemarealist = itemareaservice.queryItemarea();
 		model.addAttribute("itemtypelist", itemtypelist);
 		model.addAttribute("itemarealist", itemarealist);				
 	    return "addIteminfo";
-}
+}*/
 }
