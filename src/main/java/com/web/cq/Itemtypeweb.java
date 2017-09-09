@@ -13,7 +13,6 @@ import com.entity.Investorinfo;
 import com.entity.Itemarea;
 import com.entity.Itemtype;
 import com.entity.Userinfo;
-import com.entity.util.OpenitemInvestorinfoBoth;
 import com.service.cq.ItemareaService;
 import com.service.cq.ItemtypeService;
 
