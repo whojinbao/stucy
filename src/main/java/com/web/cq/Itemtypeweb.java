@@ -14,10 +14,8 @@ import com.entity.Itemarea;
 import com.entity.Itemtype;
 import com.entity.Userinfo;
 import com.entity.util.OpenitemInvestorinfoBoth;
-import com.service.cq.InvestorinfoService;
 import com.service.cq.ItemareaService;
 import com.service.cq.ItemtypeService;
-import com.service.cq.OpenitemInvestorinfoBothService;
 
 @Controller
 public class Itemtypeweb {
@@ -31,22 +29,13 @@ public class Itemtypeweb {
 	@Autowired
 	private ItemareaService ItemareaService;
 	@Autowired
-	private OpenitemInvestorinfoBothService OpenitemInvestorinfoBothService;
-	@Autowired
-	private InvestorinfoService InvestorinfoService;
 	@RequestMapping(value="/item")
 	public String queryItemtype(Model mm,HttpServletRequest request){
 		Userinfo phone=(Userinfo)(request.getSession().getAttribute("phone"));
 		List<Itemtype> lItemtype=ItemtypeService.queryItemtype();
 		List<Itemarea> lItemarea=ItemareaService.queryItemarea();
-		List<OpenitemInvestorinfoBoth> lIf=OpenitemInvestorinfoBothService.queryOpenitemInvestorinfoBoth();
-		List<OpenitemInvestorinfoBoth> lb=OpenitemInvestorinfoBothService.queryOpenitem();
-		Investorinfo inf=InvestorinfoService.queryInvestorinfoId(phone);
 		mm.addAttribute("lItemtype", lItemtype);
 		mm.addAttribute("lItemarea", lItemarea);
-		mm.addAttribute("lIf", lIf);
-		mm.addAttribute("lb", lb);
-		mm.addAttribute("pk",inf);
 		return "Cq/item";
 	}
 	
