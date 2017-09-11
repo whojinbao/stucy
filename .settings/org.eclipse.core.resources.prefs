@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
-encoding//src/main/java/com/service/imp/cq/InvestitemImpl.java=UTF-8
 encoding//src/main/java/com/shiro/Realm.java=UTF-8
+<<<<<<< HEAD
 encoding//src/main/java/com/web/cq/InvestitemWeb.java=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8
+=======
+>>>>>>> 9ab9f8e2fa2f4a648c211bbf7f3cf4ca78c23365

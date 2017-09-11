@@ -1,21 +1,15 @@
 package com.web.zf;
-
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.entity.Itemarea;
 import com.entity.Itemtype;
 import com.entity.Personinfo;
 import com.entity.Userinfo;
 import com.service.an.UserinfoService;
-import com.service.cq.ItemareaService;
-import com.service.cq.ItemtypeService;
 import com.service.zf.PersoninfoService;
 
 /** 
@@ -26,10 +20,10 @@ import com.service.zf.PersoninfoService;
 @Controller
 @RequestMapping("/yemian")
 public class yemianController {
-	@Autowired
+	/*@Autowired
 	public ItemtypeService itemtypeservice;
 	@Autowired
-	public ItemareaService itemareaservice;
+	public ItemareaService itemareaservice;*/
 	@Autowired
 	public PersoninfoService personinfoservice;
 	@Autowired
@@ -63,7 +57,7 @@ public class yemianController {
 	 * 跳转到前台寻找项目页面
 	 * @return
 	 */
-	@RequestMapping("/list")
+	/*@RequestMapping("/list")
 	public String golist(Model model,HttpSession session){
 		List<Itemtype> itemtypelist = itemtypeservice.queryItemtype();
 		List<Itemarea> itemarealist = itemareaservice.queryItemarea();
@@ -76,7 +70,7 @@ public class yemianController {
 		model.addAttribute("itemtypelist", itemtypelist);
 		model.addAttribute("itemarealist", itemarealist);		
 		return "list";
-	}
+	}*/
 	/**
 	 * 跳转到显示详细项目页面
 	 * @return
@@ -103,7 +97,7 @@ public class yemianController {
 	 * 跳转到项目申请页面
 	 * @return
 	 */
-	@RequestMapping("/addIteminfo")
+	/*@RequestMapping("/addIteminfo")
 	public String goaddIteminfo(Model model,HttpSession session){
 		List<Itemtype> itemtypelist = itemtypeservice.queryItemtype();
 		List<Itemarea> itemarealist = itemareaservice.queryItemarea();
@@ -116,7 +110,7 @@ public class yemianController {
 		model.addAttribute("itemarealist", itemarealist);	
 		return "addIteminfo";
 	}
-	
+	*/
 	
 	
 }

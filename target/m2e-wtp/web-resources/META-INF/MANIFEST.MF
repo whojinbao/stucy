@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
 Build-Jdk: 1.7.0_07
+<<<<<<< HEAD
 Built-By: an
+=======
+Built-By: Oliver
+>>>>>>> 9ab9f8e2fa2f4a648c211bbf7f3cf4ca78c23365
 Created-By: Maven Integration for Eclipse
 
