@@ -59,33 +59,20 @@
 </style>
 <body>
 	<!-- 头部 -->
-	<div class="header-top min-width">
-		<div class="container fn-clear">
-			<ul class="fn-right header-top-ul">
-				<li><a href="/stucy/login.html" class="app">返回首页</a></li>
-				<li>
-					<div class="">
-						<a href="/stucy/register.html" class="c-orange" title="免费注册">免费注册</a>
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a href="/stucy/login.html" class="js-login" title="登录">登录</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
 	<div class="header min-width">
 		<div class="container">
-			<div class="fn-left logo"></div>
+			 <div class="fn-left logo"> <a class="" href="/stucy/homepage.html"> <img src="../images/zxcf_logo.png" style="height:70px;width:344px;" title=""> </a> </div>
 			<ul class="top-nav fn-clear">
-				<li><a href="/stucy/yemian/list">首页</a></li>
-				<li class="on"><a href="/stucy/yemian/list">寻找项目</a></li>
-				<li><a href="">寻找投资</a></li>
-				<li><a href="/stucy/financial/member.do">会员充值</a></li>
+				<li><a href="/stucy/homepage.html">首页</a></li>
+				<li><a href="/stucy/yemian/list.do">寻找项目</a></li>
+				<li><a href="/stucy/item.do">寻找投资</a></li>
+				<li class="on"><a href="#">会员充值</a></li>
 				<li><a href="/stucy/financial/Personal.do">个人中心</a></li>
-				<li class="top-nav-safe"><a>我的账户</a></li>
+				<li class="top-nav-safe"><a>我的账户</a>
+					<span id="userId" style="display:">${userId }</span> <br/>
+            		<span id="userRole" style="display:">${userRole }</span> <br/>
+            		<span id="xuan"></span>
+				</li>
 			</ul>
 		</div>
 	</div>

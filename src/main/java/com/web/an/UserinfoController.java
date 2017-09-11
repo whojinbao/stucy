@@ -77,5 +77,8 @@ public class UserinfoController {
 	public void addUserinfo(Userinfo userinfo){
 		System.out.println(userinfo);
 		userinfoService.addUserinfo(userinfo);
+		
 	}
+	
+	
 }

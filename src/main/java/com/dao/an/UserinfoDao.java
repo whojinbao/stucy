@@ -9,6 +9,7 @@ public interface UserinfoDao {
 	
 	public void addUserinfo(Userinfo tt);
 	
-	
     public void updateUserinfo(Userinfo userinfo);
+
+	public void addAccount(Userinfo aa);
 }
