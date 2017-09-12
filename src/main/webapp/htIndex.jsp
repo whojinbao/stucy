@@ -109,7 +109,7 @@ li{
 				<div class="div3">
 					<ul>
 					<shiro:hasPermission name="c1">
-						<li><span>员工管理32</span><a href="/stucy/goshenhe.do"  onclick="return false" ></a></li>
+						<li><span>员工管理32</span><a href="/stucy/cao/goSeedetails.do"  onclick="return false" ></a></li>
 					</shiro:hasPermission>
 					<shiro:hasPermission name="c2">	
 						<li><span>角色管理33</span><a href=""  onclick="return false" ></a></li>

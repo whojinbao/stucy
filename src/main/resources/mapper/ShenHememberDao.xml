@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.cq.ShenHememberDao">
+	<select id="queryShenHemember" resultType="com.entity.Member">
+		select user_id,count,start_time,end_time from member
+	</select>
+	<update id="updateshenheMember" parameterType="com.entity.Member">
+		update member set count=#{count} where user_id=#{userId}
+	</update>  
+	<select id="queryShenHememberOnly" resultType="com.entity.Member">
+		select count from member where user_id=#{userId}
+	</select>  
+</mapper>
+
+
+

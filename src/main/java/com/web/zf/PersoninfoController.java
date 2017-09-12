@@ -37,20 +37,20 @@ public class PersoninfoController {
 		String stuPhoto = fileupload.saveFiles(files[2], request);	
 		String schphotoUrl = fileupload.saveFiles(files[3], request);	
 		
-		personinfo.setPhotoUrl(photourl);	
-		personinfo.setIdCardurl(idCardurl);	
-		personinfo.setStuPhoto(stuPhoto);	
-		personinfo.setSchphotoUrl(schphotoUrl);	
+		//personinfo.setPhotoUrl(photourl);	
+		//personinfo.setIdCardurl(idCardurl);	
+		//personinfo.setStuPhoto(stuPhoto);	
+		//personinfo.setSchphotoUrl(schphotoUrl);	
 		personinfoservice.addPersoninfo(personinfo) ;  
-		System.out.println(personinfo.getPhotoUrl());
+		//System.out.println(personinfo.getPhotoUrl());
 		System.out.println(personinfo.getUserId());
 		System.out.println(personinfo.getTelephone());
 		System.out.println(personinfo.getzName());
 		System.out.println(personinfo.getAddress());
-		System.out.println(personinfo.getIdCardnum());
+		/*System.out.println(personinfo.getIdCardnum());
 		System.out.println(personinfo.getIdCardurl());
 		System.out.println(personinfo.getStuPhoto());
-		System.out.println(personinfo.getSchphotoUrl());
+		System.out.println(personinfo.getSchphotoUrl());*/
 		
 	}
 	
