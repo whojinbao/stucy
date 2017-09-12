@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.who.QtItemDetailDao">
+	<insert id="addInvestor" >
+		insert into investor values(investor_seq.nextval,#{itemId},#{investorName},#{investorTel},#{investorText},#{investorPosition},#{investorTime},#{investorVisit})
+	</insert>
+	<select id="queryQtItem" resultType="java.util.Map">
+		select * from iteminfo i,itemarea a,itemtype t where i.itemtype_id=t.itemtype_id and i.itemarea_id=a.itemarea_id and i.item_id=#{itemId}
+	</select>
+</mapper>	
