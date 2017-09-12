@@ -47,7 +47,7 @@ public class ConsumerController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getconsumer")
-	public Map<String,Object> getConsumer(Page pg ){
+	public Map<String, Object> getConsumer(Page pg ){
 		return conService.queryConsumer(pg);
 	};
 	
@@ -121,8 +121,6 @@ public class ConsumerController {
 	@RequestMapping("/valiconsumer")
 	public String valiConsumer(@RequestBody String str,HttpServletRequest request,HttpServletResponse response){
 		Consumer con=JSON.parseObject(str, Consumer.class);
-		con.setConName("zfff");
-		request.getSession().setAttribute("conUser", con);
 		Subject subject = SecurityUtils.getSubject();//δ��֤״̬
 		String pwd=con.getConPassword();
 		pwd = MD5.md5(pwd);

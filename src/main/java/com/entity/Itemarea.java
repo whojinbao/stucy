@@ -2,18 +2,19 @@ package com.entity;
 
 
 public class Itemarea {
-	String  itemareaid;//项目地区编号
-	String itemareaname;//项目地区名称
-	public String getItemareaid() {
-		return itemareaid;
+	String  itemareaId;//
+	String itemareaName;//
+	public String getItemareaId() {
+		return itemareaId;
 	}
-	public void setItemareaid(String itemareaid) {
-		this.itemareaid = itemareaid;
+	public void setItemareaId(String itemareaId) {
+		this.itemareaId = itemareaId;
 	}
-	public String getItemareaname() {
-		return itemareaname;
+	public String getItemareaName() {
+		return itemareaName;
 	}
-	public void setItemareaname(String itemareaname) {
-		this.itemareaname = itemareaname;
+	public void setItemareaName(String itemareaName) {
+		this.itemareaName = itemareaName;
 	}
+
 }

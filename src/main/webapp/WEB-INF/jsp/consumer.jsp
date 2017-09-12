@@ -123,6 +123,7 @@ $(function (){
 		$("#idCardurl2").val(conVal.ID_CARDURL)
 		var conId=conVal.CON_ID;
 		var sex=conVal.SEX;
+		
 		var radio=$("#condd2 input[name='sex']");
 		if(radio.eq(0).val()==sex){
 			radio.eq(0).prop("checked",true);

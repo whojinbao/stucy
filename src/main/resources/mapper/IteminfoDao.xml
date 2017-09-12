@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.zf.IteminfoDao">  
+    <!-- 添加项目申请  -->
+	<insert id="addIteminfo" useGeneratedKeys="false" parameterType="com.entity.Iteminfo">
+	   insert into Iteminfo(item_id,user_id,item_name,itemtype_id,itemarea_id,item_content,item_photo,item_money,start_time,item_status)
+	    values(stuorder.nextval,#{userId},#{itemName},#{itemtypeId},#{itemareaId},#{itemContent}, #{itemPhoto} ,#{itemMoney},to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'),0)
+	</insert>
+	<!-- 通过项目编号查询项目申请  -->
+	 <select id="queryIteminfo" resultType="com.entity.Iteminfo" parameterType="String" >
+		select item_id,user_id,item_name,itemtype_id,itemarea_id,item_content,item_photo,item_money,start_time from iteminfo 
+		where item_id = #{itemId}
+	</select>
+	 <!-- 查询所有的项目申请  -->
+	 <select id="getIteminfos" resultType="com.entity.Iteminfo"  >
+		select item_id,user_id,item_name,itemtype_id,itemarea_id,item_content,item_photo,item_money,start_time from iteminfo 		
+	</select>
+</mapper>

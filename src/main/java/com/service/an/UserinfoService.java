@@ -10,7 +10,7 @@ public interface UserinfoService {
 	public boolean qUserinfosnew(Userinfo user);
 	
     public void updateUserinfo(Userinfo tt);//ÐÞ¸ÄÉí·Ý
-	public void addAccount(Userinfo tt);
+    
 	boolean queryPassword(Userinfo user);
 	
 }

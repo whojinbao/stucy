@@ -29,12 +29,11 @@ public  class UserinfoServiceImpl implements UserinfoService{
 	public void addUserinfo(Userinfo tt) {
 		// TODO Auto-generated method stub
 		UserinfoDao.addUserinfo(tt);
-		UserinfoDao.addAccount(tt);
 	}
 	
-	public boolean qUserinfosnew(Userinfo user) {
+	public boolean qUserinfosnew(Userinfo uu) {
 		// TODO Auto-generated method stub
-		List<Userinfo> list=UserinfoDao.qUserinfos(user.getUserId());
+		List<Userinfo> list=UserinfoDao.qUserinfos(uu.getUserId());
 		if (list.size()!=0) {
 			return false;
 		}
@@ -60,13 +59,6 @@ public  class UserinfoServiceImpl implements UserinfoService{
 			}
 		}
 	}
-
-	@Override
-	public void addAccount(Userinfo tt) {
-		// TODO Auto-generated method stub
-		UserinfoDao.updateUserinfo(tt);
-	}
-
 	
 	
 }

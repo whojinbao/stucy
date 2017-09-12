@@ -3,13 +3,14 @@ package com.entity;
 import org.springframework.web.multipart.MultipartFile;
 
 /** 
- * @author 作者郑飞: 
+ * @author 作者: zf
  * @version 创建时间：2017年8月30日 上午8:46:12 
  * 类说明 
- * Iteminfo 项目详情表
+ * Iteminfo 项目申请表
  */ 
 
 public class Iteminfo {
+	
 	private String  itemId ;  //项目编号
 	private String   userId ;  //项目申请人的账号
 	private String   zName ;  //项目申请人的真实姓名	
@@ -21,6 +22,12 @@ public class Iteminfo {
 	private int   itemMoney ;//项目资金
 	private String itemStatus;//项目状态（0：未审核）
 	private String startTime;//项目申请时间	
+	
+	
+	
+	
+	
+	
 	public String getItemId() {
 		return itemId;
 	}
@@ -87,5 +94,6 @@ public class Iteminfo {
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
+	
 	
 }

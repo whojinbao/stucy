@@ -11,7 +11,6 @@ public class Userinfo {
 	private String userId;//账号
 	private String userPassword ;//密码
 	private String userRole;//身份（1:创业人，2：投资人）
-	private String balance;//金额
 	public String getUserRole() {
 		return userRole;
 	}
@@ -30,12 +29,5 @@ public class Userinfo {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public String getBalance() {
-		return balance;
-	}
-	public void setBalance(String balance) {
-		this.balance = balance;
-	}
-	
 	
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.zf.OpenitemDao">
+   <!-- 查询所有项目 -->
+   <select id="getOpenitems" resultType="com.entity.Openitem">
+		select o.item_id,it.item_name,o.item_status,o.starttime,o.endtime from openitem o,iteminfo it where o.item_id = it.item_id
+	</select>
+	<insert id="addOpenitem" useGeneratedKeys="false" parameterType="com.entity.Openitem">
+	    insert into openitem(item_id,item_status,starttime,endtime) 
+	    values(#{itemId},#{itemStatus},#{starttime},#{endtime})
+	</insert>
+	<!-- 查询指定项目 -->
+	 <select id="queryOpenitem" resultType="com.entity.Openitem" parameterType="String" >
+		select o.item_id,it.item_name,o.item_status,o.starttime,o.endtime from openitem o,iteminfo it where o.item_id = it.item_id
+		and o.item_id = #{itemId}
+	</select>
+	<!-- 查询指定人的所有项目 -->
+	 <select id="queryOpenitems" resultType="com.entity.Openitem" parameterType="String" >
+		select o.item_id,it.item_name,o.item_status,o.starttime,o.endtime from openitem o,iteminfo it where o.item_id = it.item_id
+		and it.user_id = #{userId}
+	</select>
+</mapper>

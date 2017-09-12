@@ -13,9 +13,9 @@ public class fileUpload {
 		//判断是否为空
 		if (!file.isEmpty()) {		
 			String fileName = file.getOriginalFilename();
-			System.out.println("文件路径"+request.getSession().getServletContext().getRealPath("/"));
+			//System.out.println("文件路径"+request.getSession().getServletContext().getRealPath("/stucy/src/main/webapp/caoImage/"));
 			//request.getSession().getServletContext().getRealPath("\\main\\webapp\\caoImage\\")
-			String filePath ="C://Users//Administrator//Desktop//stucy//src//main//webapp//caoImage//" +new Date().getTime()+
+			String filePath ="C:/stucy/src/main/webapp/caoImage/" +new Date().getTime()+
 					fileName.substring(fileName.lastIndexOf("."));
 		    try {	
 				

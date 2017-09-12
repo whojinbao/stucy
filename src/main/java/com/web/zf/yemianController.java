@@ -1,15 +1,15 @@
 package com.web.zf;
-import java.util.List;
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.entity.Itemarea;
-import com.entity.Itemtype;
-import com.entity.Personinfo;
-import com.entity.Userinfo;
+
 import com.service.an.UserinfoService;
+import com.service.zf.ItemareaService;
+import com.service.zf.ItemtypeService;
 import com.service.zf.PersoninfoService;
 
 /** 
@@ -19,15 +19,7 @@ import com.service.zf.PersoninfoService;
  */ 
 @Controller
 @RequestMapping("/yemian")
-public class yemianController {
-	/*@Autowired
-	public ItemtypeService itemtypeservice;
-	@Autowired
-	public ItemareaService itemareaservice;*/
-	@Autowired
-	public PersoninfoService personinfoservice;
-	@Autowired
-	public UserinfoService userinfoservice;
+public class yemianController {	
 	/**
 	 * 跳转到可发布的项目页面
 	 * @return
@@ -52,25 +44,24 @@ public class yemianController {
 	public String goPersoninfo(){
 		return "personinfo";
 	}
+	
 /***** 前台    *********/	
 	/**
 	 * 跳转到前台寻找项目页面
 	 * @return
 	 */
-	/*@RequestMapping("/list")
+	@RequestMapping("/list")
 	public String golist(Model model,HttpSession session){
-		List<Itemtype> itemtypelist = itemtypeservice.queryItemtype();
-		List<Itemarea> itemarealist = itemareaservice.queryItemarea();
+		/*
 		Userinfo user = (Userinfo) session.getAttribute("qtuser");
 		String userId = user.getUserId();	
 		String role = user.getUserRole();
 		System.out.println(userId+"role"+role);
 		model.addAttribute("userId", userId);
 		model.addAttribute("userRole", role);
-		model.addAttribute("itemtypelist", itemtypelist);
-		model.addAttribute("itemarealist", itemarealist);		
+		*/
 		return "list";
-	}*/
+	}
 	/**
 	 * 跳转到显示详细项目页面
 	 * @return
@@ -86,31 +77,48 @@ public class yemianController {
 	 */
 	@RequestMapping("/addPersoninfo")
 	public String goAddPersoninfo(HttpSession session,Model model){
-		Userinfo user = (Userinfo) session.getAttribute("user");
-		String userId = user.getUserId();
-		user.setUserRole("1");//修改身份为创业人
-		userinfoservice.updateUserinfo(user);
-	    model.addAttribute("userId",userId);
+		/*Userinfo user = (Userinfo) session.getAttribute("user");
+	    model.addAttribute("userId",userId);*/
 		return "addPersoninfo";
 	}
 	/**
 	 * 跳转到项目申请页面
 	 * @return
 	 */
-	/*@RequestMapping("/addIteminfo")
+	@RequestMapping("/addIteminfo")
 	public String goaddIteminfo(Model model,HttpSession session){
-		List<Itemtype> itemtypelist = itemtypeservice.queryItemtype();
-		List<Itemarea> itemarealist = itemareaservice.queryItemarea();
+	/*	
 		Userinfo user = (Userinfo) session.getAttribute("user");
 		String userId = user.getUserId();	
 	    Personinfo person = (Personinfo) session.getAttribute("person");
 		model.addAttribute("zName", person.getzName());
 		model.addAttribute("userId", userId);		
-		model.addAttribute("itemtypelist", itemtypelist);
-		model.addAttribute("itemarealist", itemarealist);	
+		*/	
 		return "addIteminfo";
 	}
-	*/
-	
+	/**
+	 * 跳转到显示个人中心项目发布人个人信息页面
+	 * @return
+	 */
+	@RequestMapping("/newperson")
+	public String gonewPerson(){
+		return "newperson";
+	}
+	/**
+	 * 跳转到显示个人中心修改密码页面
+	 * @return
+	 */
+	@RequestMapping("/zfpassword")
+	public String gopassword(){
+		return "zfpassword";
+	}
+	/**
+	 * 跳转到个人中心的项目列表
+	 * @return
+	 */
+	@RequestMapping("/personitemlist")
+	public String gopersonitemlist(){
+		return "personitemlist";
+	}
 	
 }

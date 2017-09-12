@@ -1,0 +1,18 @@
+package com.service.zf;
+
+import java.util.List;
+
+import com.entity.Itemtype;
+/**
+ * 
+* @author 作者 :zf
+* @version 创建时间：2017年9月11日 上午9:56:26 
+* 类说明    项目类型的service层
+ */
+public interface ItemtypeService {
+	/**
+	 * 查询所有的项目类型
+	 * @return
+	 */
+	public List<Itemtype> queryItemtype();
+}

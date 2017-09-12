@@ -5,27 +5,41 @@
 <html>
 <head>
 <title>寻找项目</title>
-<link  href="/stucy/p2p/css/common.css" rel="stylesheet" />
+<link href="/stucy/p2p/css/common.css" rel="stylesheet" />
 <link href="/stucy/p2p/css/index.css" rel="stylesheet" type="text/css">
 <link href="/stucy/p2p/css/detail.css" rel="stylesheet" type="text/css">
-<script type="/stucy/text/javascript" src="/p2p/script/jquery.min.js"></script>
-<script src="/stucy/helpframe/bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/stucy/p2p/script/jquery.min.js"></script>
 </head>
 <body>
 <!-- 头部 -->
+  <div class="header-top min-width">
+    <div class="container fn-clear">     
+      <ul class="fn-right header-top-ul">
+        <li> <a href="/stucy/login.html" class="app">退出登陆</a> </li>
+       <!--  <li>
+          <div class=""><a href="/stucy/register.html" class="c-orange" title="免费注册">免费注册</a></div>
+        </li>
+        <li>
+          <div class=""><a href="/stucy/login.html" class="js-login" title="登录">登录</a></div>
+        </li> -->
+      </ul>
+    </div>
+  </div>
   <div class="header min-width">
     <div class="container">
-     <div class="fn-left logo"> <a class="" href="/stucy/homepage.html"> <img src="../images/zxcf_logo.png" style="height:70px;width:344px;" title=""></a> </div>
+      <div class="fn-left logo">  </div>
       <ul class="top-nav fn-clear">
-        <li> <a href="/stucy/homepage.html">首页</a> </li>    
+        <li > <a href="/stucy/yemian/list.do">首页</a> </li>    
         <li class="on"><a href="#">寻找项目</a></li>
         <li><a href="/stucy/item.do">寻找投资</a></li>
         <li><a href="/stucy/financial/member.do">会员充值</a></li>
 		<li><a href="/stucy/financial/Personal.do">个人中心</a></li>
         <li class="top-nav-safe"> <a href="#" id="person">我的账户</a>
-            <span id="userId" style="display:">${userId }</span> <br/>
-            <span id="userRole" style="display:">${userRole }</span> <br/>
-            <span id="xuan"></span>
+                 <span id="userId" style="display:">${userId }</span> <br/>
+                  <span id="userRole" style="display:">${userRole }</span> <br/>
+                <span id="xuan">
+                
+                </span>
         </li>      
       </ul>
     </div>

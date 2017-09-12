@@ -8,10 +8,16 @@ package com.entity;
 */ 
  
 public class Openitem {
-	private String  itemId ;//项目编号
+	
+	private String  itemId ;//项目编号	
+	private String  itemName ;//项目名称
 	private String   itemStatus ;//项目状态（集资是否完成）
 	private String   starttime ;//项目发布开始时间
 	private String   endtime ;//项目发布结束时间
+	
+	
+	
+	
 	public String getItemId() {
 		return itemId;
 	}
@@ -36,4 +42,12 @@ public class Openitem {
 	public void setEndtime(String endtime) {
 		this.endtime = endtime;
 	}
+	public String getItemName() {
+		return itemName;
+	}
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+	
+	
 }

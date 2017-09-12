@@ -135,7 +135,6 @@
 	<script type="text/javascript">
 		
 		$("#userId").blur(function() {//数字11位的手机号
-			
 			var str = $("#userId").val();
 			var re = /^1\d{10}$/;
 			if (re.test(str)) {
@@ -144,17 +143,19 @@
 				}
 				$.ajax({
 					type : "post",
-					url : "/stucy/reception/qUserinfosnew.do",
+					url : "/stycy/haha/qUserinfosnew.do",
 					contentType : "application/json;charset=utf-8",
-					data :  JSON.stringify(data),
+					dataType : "json",
+					data : JSON.stringify(data),
 					success : function(data1) {
 						if (data1 == "error") {
-							//alert("可以注册");		
+							//alert("可以注册");
 							$("#uid").hide();
 						} else {
 							//alert("用户已存在");
 							$("#uid").css("color","red").show();
-						};
+						}
+						;
 					}
 				});
 			} else {
@@ -198,14 +199,13 @@
 							&& (!$("#cpwd").val() == "")) {
 
 						$.ajax({
-							url : "/stucy/reception/addUserinfo.do",
+							url : "/stucy/haha/addUserinfo.do",
 							type : "post",
 							data : $("#MyForm").serialize(),
 							success : function(data) {
 								window.location.href = 'login.html';
 							}
 						})
-						
 					} else {
 						alert("账号和密码和密码确认不允许为空");
 					}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.zf.PersoninfoDao">
+   <!-- 通过账号查询用户个人信息 -->
+   <select id="queryPerson" resultType="com.entity.Personinfo" parameterType="String">
+		select user_id,z_name,sex,telephone,address,no_idcard,z_idcard,f_idcard,photo from personinfo
+		 where user_id = #{userId}	
+	</select>
+	<!-- 添加用户个人信息 -->
+	<insert id="addPersoninfo" useGeneratedKeys="false" parameterType="com.entity.Personinfo">
+	    insert into personinfo(user_id,z_name,sex,telephone,address,no_idcard,z_idcard,f_idcard,photo) 
+	    values(stuorder.nextval,#{zName},#{sex},#{telephone},#{address},#{noIdcard},#{zIdcard},#{fIdcard},#{photo})
+	</insert>
+	<!-- 查询所有用户个人信息 -->
+	 <select id="getPersoninfos" resultType="com.entity.Personinfo" >
+		select user_id,z_name,sex,telephone,address,no_idcard,z_idcard,f_idcard,photo from personinfo 	
+	</select>
+</mapper>

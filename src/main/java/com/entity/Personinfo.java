@@ -1,7 +1,7 @@
 package com.entity;
 
 /** 
-* @author 作者 E-mail: 
+* @author 作者 : zf
 * @version 创建时间：2017年8月30日 上午9:56:31 
 * 类说明 
 * Personinfo : 申请成为项目发布人是要填的个人信息表
@@ -17,6 +17,22 @@ public class Personinfo {
 	private String   zIdcard ;//身份证图片（正）
 	private String   fIdcard ;//身份证图片(反)
 	private String   photo;//本人照片
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 	public String getUserId() {
 		return userId;
 	}
@@ -47,6 +63,7 @@ public class Personinfo {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getNoIdcard() {
 		return noIdcard;
 	}
@@ -65,11 +82,6 @@ public class Personinfo {
 	public void setfIdcard(String fIdcard) {
 		this.fIdcard = fIdcard;
 	}
-	public String getPhoto() {
-		return photo;
-	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
+	
 	
 }

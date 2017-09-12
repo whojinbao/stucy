@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.hgh.MemberDao">
+	<select id="querymember" resultType="com.entity.Member" parameterType="com.entity.util.Page">
+		select * from (select rownum r,c.* from member c
+				<if test="selVal!=null">
+	 				where c.user_id like '%${selVal}%'
+ 				</if>
+			) u where r > #{startIndex} and r &lt; #{endIndex} 
+		
+	</select>
+	<select id="queryAllMember" resultType="int" parameterType="com.entity.util.Page">
+		select count(*) from member 
+		<if test="selVal!=null">
+	 				where user_id like '%${selVal}%'
+ 		</if>
+	</select>
+	<insert id="addmember" useGeneratedKeys="false" parameterType="com.entity.Member">
+		insert into member values(#{userId},#{memberType},#{memberContent},#{memberTime},#{memberMonsy},#{count},#{startTime},#{endTime}) 
+	</insert> 
+	<select id="querymember1" resultType="com.entity.Member">
+		select * from member where user_id=#{userId}
+	</select>
+	<update id="updatemember" parameterType="com.entity.Member">
+		update member set member_time=#{memberTime},count=#{count},member_monsy=#{memberMonsy},start_time=#{startTime},end_time=#{endTime} where user_id=#{userId}
+	</update>
+</mapper>
