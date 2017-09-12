@@ -2,6 +2,7 @@ package com.web.an;
 
 import java.util.List;
 
+import javax.accessibility.AccessibleRelation;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,7 +18,7 @@ import com.entity.Userinfo;
 import com.service.an.UserinfoService;
 
 @Controller
-@RequestMapping("/haha")
+@RequestMapping("/reception")
 public class UserinfoController {
 	@Autowired
 	private UserinfoService userinfoService;
@@ -27,11 +28,8 @@ public class UserinfoController {
 		response.setContentType("text/html;charset=utf-8");
 		Userinfo user = JSON.parseObject(data,Userinfo.class);
 		request.getSession().setAttribute("phone", user);
-		System.out.println(user.getUserId()+" 222222222222222222222222222222222");
 		boolean listuu = userinfoService.queryPassword(user);
 		List<Userinfo> ulist = userinfoService.qUserinfos(user);
-		
-		System.out.println(listuu+" 1111111111111111111111111111111111111111111111111111");
 		try {
 			if (listuu) {
 				/**
@@ -55,14 +53,12 @@ public class UserinfoController {
 	public void qUerinofsnew(HttpServletRequest request,HttpServletResponse response,@RequestBody String data){
 		response.setContentType("text/html;charset=utf-8");
 		Userinfo user = JSON.parseObject(data,Userinfo.class);
-		System.out.println(user.getUserId()+" 222222222222222222222222222222222");
 		boolean listnew = userinfoService.qUserinfosnew(user);
-		System.out.println(listnew+" 1111111111111111111111111111111111111111111111111111");
 		try {
 			if (listnew) {
-				response.getWriter().write(JSON.toJSONString("error"));
+				response.getWriter().write("error");
 			}else{
-				response.getWriter().write(JSON.toJSONString("ok"));
+				response.getWriter().write("ok");
 			}
 								
 			response.getWriter().flush();

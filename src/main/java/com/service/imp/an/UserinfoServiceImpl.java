@@ -32,9 +32,9 @@ public  class UserinfoServiceImpl implements UserinfoService{
 		UserinfoDao.addAccount(tt);
 	}
 	
-	public boolean qUserinfosnew(Userinfo uu) {
+	public boolean qUserinfosnew(Userinfo user) {
 		// TODO Auto-generated method stub
-		List<Userinfo> list=UserinfoDao.qUserinfos(uu.getUserId());
+		List<Userinfo> list=UserinfoDao.qUserinfos(user.getUserId());
 		if (list.size()!=0) {
 			return false;
 		}
