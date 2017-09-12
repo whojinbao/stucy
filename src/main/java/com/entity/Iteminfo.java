@@ -10,40 +10,17 @@ import org.springframework.web.multipart.MultipartFile;
  */ 
 
 public class Iteminfo {
-	
 	private String  itemId ;  //项目编号
-	private String   userId ;  //项目发布人的账号
-	private String   zName ;  //项目发布人的真实姓名	
+	private String   userId ;  //项目申请人的账号
+	private String   zName ;  //项目申请人的真实姓名	
 	private String   itemName ;//项目名称
-	private String   itemIntro ;//项目简介
-	private String   itemtypeId; //项目类型
-	private String   itemareaid; //项目地区	
+	private String   itemtypeId; //项目经营类型
+	private String   itemareaId; //项目经营地区	
 	private String   itemContent ;//项目内容
-	private String   itemmaterials;//项目附件
+	private String   itemPhoto;//项目图片
 	private int   itemMoney ;//项目资金
-	private String itemStatus;//项目状态（1：未审核）
-	private String itemOpentime;//项目申请时间
-	
-	
-	public String getItemStatus() {
-		return itemStatus;
-	}
-	public void setItemStatus(String itemStatus) {
-		this.itemStatus = itemStatus;
-	}
-	public String getItemOpentime() {
-		return itemOpentime;
-	}
-	public void setItemOpentime(String itemOpentime) {
-		this.itemOpentime = itemOpentime;
-	}
-
-	public String getzName() {
-		return zName;
-	}
-	public void setzName(String zName) {
-		this.zName = zName;
-	}
+	private String itemStatus;//项目状态（0：未审核）
+	private String startTime;//项目申请时间	
 	public String getItemId() {
 		return itemId;
 	}
@@ -56,17 +33,17 @@ public class Iteminfo {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	public String getzName() {
+		return zName;
+	}
+	public void setzName(String zName) {
+		this.zName = zName;
+	}
 	public String getItemName() {
 		return itemName;
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
-	}
-	public String getItemIntro() {
-		return itemIntro;
-	}
-	public void setItemIntro(String itemIntro) {
-		this.itemIntro = itemIntro;
 	}
 	public String getItemtypeId() {
 		return itemtypeId;
@@ -74,11 +51,11 @@ public class Iteminfo {
 	public void setItemtypeId(String itemtypeId) {
 		this.itemtypeId = itemtypeId;
 	}
-	public String getItemareaid() {
-		return itemareaid;
+	public String getItemareaId() {
+		return itemareaId;
 	}
-	public void setItemareaid(String itemareaid) {
-		this.itemareaid = itemareaid;
+	public void setItemareaId(String itemareaId) {
+		this.itemareaId = itemareaId;
 	}
 	public String getItemContent() {
 		return itemContent;
@@ -86,11 +63,11 @@ public class Iteminfo {
 	public void setItemContent(String itemContent) {
 		this.itemContent = itemContent;
 	}
-	public String getItemmaterials() {
-		return itemmaterials;
+	public String getItemPhoto() {
+		return itemPhoto;
 	}
-	public void setItemmaterials(String itemmaterials) {
-		this.itemmaterials = itemmaterials;
+	public void setItemPhoto(String itemPhoto) {
+		this.itemPhoto = itemPhoto;
 	}
 	public int getItemMoney() {
 		return itemMoney;
@@ -98,5 +75,17 @@ public class Iteminfo {
 	public void setItemMoney(int itemMoney) {
 		this.itemMoney = itemMoney;
 	}
-
+	public String getItemStatus() {
+		return itemStatus;
+	}
+	public void setItemStatus(String itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	
 }

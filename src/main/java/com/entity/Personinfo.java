@@ -13,15 +13,10 @@ public class Personinfo {
 	private String   sex ;//性别
 	private String   telephone ;//电话
 	private String   address ;//地址
-	private String   idCardnum ;//身份证号码
-	private String   idCardurl ;//身份证图片
-	private String   photoUrl  ;//本人照片
-	private String   schphotoUrl ;//学信网截图
-	private String   stuNum ;//学号
-	private String   stuPhoto ;//学生证照片
-	private String   schName ;//学校名称
-	private String   schAddress;//学校地址
-	private String   credit ;//信用
+	private String   noIdcard ;//身份证号码
+	private String   zIdcard ;//身份证图片（正）
+	private String   fIdcard ;//身份证图片(反)
+	private String   photo;//本人照片
 	public String getUserId() {
 		return userId;
 	}
@@ -40,7 +35,6 @@ public class Personinfo {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	
 	public String getTelephone() {
 		return telephone;
 	}
@@ -53,60 +47,29 @@ public class Personinfo {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getIdCardnum() {
-		return idCardnum;
+	public String getNoIdcard() {
+		return noIdcard;
 	}
-	public void setIdCardnum(String idCardnum) {
-		this.idCardnum = idCardnum;
+	public void setNoIdcard(String noIdcard) {
+		this.noIdcard = noIdcard;
 	}
-	public String getIdCardurl() {
-		return idCardurl;
+	public String getzIdcard() {
+		return zIdcard;
 	}
-	public void setIdCardurl(String idCardurl) {
-		this.idCardurl = idCardurl;
+	public void setzIdcard(String zIdcard) {
+		this.zIdcard = zIdcard;
 	}
-	public String getPhotoUrl() {
-		return photoUrl;
+	public String getfIdcard() {
+		return fIdcard;
 	}
-	public void setPhotoUrl(String photoUrl) {
-		this.photoUrl = photoUrl;
+	public void setfIdcard(String fIdcard) {
+		this.fIdcard = fIdcard;
 	}
-	public String getSchphotoUrl() {
-		return schphotoUrl;
+	public String getPhoto() {
+		return photo;
 	}
-	public void setSchphotoUrl(String schphotoUrl) {
-		this.schphotoUrl = schphotoUrl;
-	}
-	public String getStuNum() {
-		return stuNum;
-	}
-	public void setStuNum(String stuNum) {
-		this.stuNum = stuNum;
-	}
-	public String getStuPhoto() {
-		return stuPhoto;
-	}
-	public void setStuPhoto(String stuPhoto) {
-		this.stuPhoto = stuPhoto;
-	}
-	public String getSchName() {
-		return schName;
-	}
-	public void setSchName(String schName) {
-		this.schName = schName;
-	}
-	
-	public String getSchAddress() {
-		return schAddress;
-	}
-	public void setSchAddress(String schAddress) {
-		this.schAddress = schAddress;
-	}
-	public String getCredit() {
-		return credit;
-	}
-	public void setCredit(String credit) {
-		this.credit = credit;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	
 }

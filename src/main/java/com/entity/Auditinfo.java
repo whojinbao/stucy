@@ -1,11 +1,11 @@
 package com.entity;
 
 public class Auditinfo {
-	private String   itemId ;
-	private String   auditId ;
-	private String   auditAdvice ;
-	private String   isno;
-	private String   auditTime ;
+	private String   itemId ;//项目编号
+	private String   auditId ;//审核人编号
+	private String   auditAdvice ;//意见
+	private String   isno;//是否通过
+	private String   auditTime ;//审核时间
 	public String getItemId() {
 		return itemId;
 	}
@@ -36,5 +36,4 @@ public class Auditinfo {
 	public void setAuditTime(String auditTime) {
 		this.auditTime = auditTime;
 	}
-	
 }

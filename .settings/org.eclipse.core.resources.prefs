@@ -1,2 +1,9 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=9ab9f8e2fa2f4a648c211bbf7f3cf4ca78c23365
 eclipse.preferences.version=1
 encoding//src/main/java/com/shiro/Realm.java=UTF-8
+<<<<<<< HEAD
+=======
+encoding//src/main/webapp/index.jsp=UTF-8
+>>>>>>> cd0122a52331e357b58874c8684d3132b5d65eed
